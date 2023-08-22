@@ -4,9 +4,11 @@ import { create } from 'zustand'
 
 interface BoardStore {
   board: Board;
+  searchString: string,
   getBoard: () => void,
   setBoardState: (board: Board) => void;
   updateTodoInDB: (todo: Todo, columnId: TypedColumn) => void;
+  setSearchString: (searchString: string) => void;
 }
 
 export const useBoardStore = create<BoardStore>((set) => ({
@@ -28,5 +30,7 @@ export const useBoardStore = create<BoardStore>((set) => ({
         status: columnId
       }
     )
-  }
+  },
+  searchString: "",
+  setSearchString: (searchString) => set({ searchString })
 }))
