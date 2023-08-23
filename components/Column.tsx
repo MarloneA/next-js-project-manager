@@ -5,7 +5,7 @@ import { Draggable, Droppable } from "react-beautiful-dnd"
 import TodoCard from "./TodoCard"
 import { useBoardStore } from "@/store/BoardStore"
 
-type Props = {k
+type Props = {
   id: TypedColumn,
   todos: Todo[],
   index: number
