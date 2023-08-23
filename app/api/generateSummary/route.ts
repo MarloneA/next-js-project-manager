@@ -21,13 +21,6 @@ export async function POST(request: Request) {
     stream: false
   });
 
-
-  console.log('chatCompletion: ', chatCompletion.choices[0].message.content);
-
-  // const { data } = chatCompletion;
-
-  // console.log('data.choices[0].message: ', data.choices[0].message);
-
   return NextResponse.json(
     { "suggestion": chatCompletion.choices[0].message.content }
   )
