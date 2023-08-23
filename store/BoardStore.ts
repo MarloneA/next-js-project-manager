@@ -45,7 +45,7 @@ export const useBoardStore = create<BoardStore>((set, get) => ({
     )
   },
   setSearchString: (searchString) => set({ searchString }),
-  deleteTodo: async (taskIndex, todo, id) => {
+  deleteTodo: async (taskIndex, todo: any, id) => {
     const newColumns = new Map(get().board.columns);
 
     newColumns.get(id)?.todos.splice(taskIndex, 1);
@@ -106,7 +106,7 @@ export const useBoardStore = create<BoardStore>((set, get) => ({
     set((state) => {
       const newColumns = new Map(state.board.columns)
 
-      const newTodo: Todo = {
+      const newTodo: any = {
         $id,
         $createdAt: new Date().toISOString(),
         title: todo,
