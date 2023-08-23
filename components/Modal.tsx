@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useRef, useState } from 'react'
+import { Fragment, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { useModalStore } from '@/store/ModalStore'
 import TaskTypeRadioGroup from './TaskTypeRadioGroup'
@@ -15,7 +15,7 @@ function Modal() {
   const [isOpen, closeModal] = useModalStore(state => [state.isOpen, state.closeModal])
   const [addTask, taskInput, setNewTaskInput, image, setImage, newTaskType ] = useBoardStore(state => [state.addTask, state.taskInput, state.setNewTaskInput, state.image, state.setImage, state.newTaskType])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
 
     if (!taskInput) return;
